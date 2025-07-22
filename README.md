@@ -1,104 +1,119 @@
 # CRUD de Productos y Categorías
 
-Este proyecto es una aplicación CRUD (Create, Read, Update, Delete) para la gestión de productos y categorías, desarrollada con **React.js**, **Node.js** y **MySQL**. Incluye un frontend moderno, un backend con API REST y conexión a base de datos relacional.
+Este es un proyecto Full Stack que consiste en un sistema de gestión de productos y categorías. Está desarrollado con **React.js** en el frontend, **Node.js/Express** en el backend y **MySQL** como base de datos. Además, la API cuenta con documentación interactiva generada con **Swagger**.
 
-## 🚀 Funcionalidades
+## 🚀 Características
 
-- Crear, editar, eliminar y listar productos.
-- Crear, editar, eliminar y listar categorías.
-- Asociación de productos con categorías.
-- Confirmación al eliminar elementos.
-- Notificaciones amigables con `react-toastify`.
-- Estilos personalizados con CSS.
+- CRUD completo de productos y categorías.
+- API RESTful.
+- Conexión a base de datos MySQL.
+- Documentación con Swagger UI.
+- Separación de frontend y backend.
 
-## 🛠 Tecnologías utilizadas
-
-### Frontend
-- React.js (Vite)
-- Axios
-- React Router DOM
-- React Toastify
-
-### Backend
-- Node.js
-- Express.js
-- MySQL2
-- CORS
-
-### Base de datos
-- MySQL
+---
 
 ## 📁 Estructura del proyecto
 
 ```
-/crud-app
-├── backend/
-│   ├── index.js
-│   ├── routes/
-│   └── controllers/
-├── frontend/
-│   └── src/
-│       ├── components/
-│       │   ├── ProductList.jsx
-│       │   ├── ProductForm.jsx
-│       │   ├── CategoryList.jsx
-│       │   ├── CategoryForm.jsx
-│       ├── pages/
-│       │   ├── Home.jsx
-│       │   ├── Productos.jsx
-│       │   └── Categorias.jsx
-│       ├── App.jsx
-│       ├── main.jsx
-│       └── styles/
-│           └── Styles.css
+/client              # Frontend en React
+/server
+  |-- /controllers   # Lógica de negocio
+  |-- /routes        # Endpoints
+  |-- /models        # Modelos de datos
+  |-- /config        # Conexión a la base de datos
+  |-- index.js       # Punto de entrada del backend
+  |-- swagger.js     # Configuración de Swagger
+.env                 # Variables de entorno
 ```
 
-## ⚙️ Configuración del entorno
+---
 
-### Clona el repositorio
+## 🔧 Instalación y configuración
+
+### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/tu-usuario/tu-repo.git
+cd tu-repo
 ```
 
-### Configura el Backend
+### 2. Instala las dependencias
+
+#### Backend (en `/server`):
 
 ```bash
-cd backend
+cd server
 npm install
 ```
 
-Crea un archivo `.env` (si lo usas) o ajusta los valores de conexión directamente en el código para conectarte a tu base de datos MySQL:
+#### Frontend (en `/client`):
 
-```env
-DB_HOST=localhost
-DB_USER=tu_usuario
-DB_PASSWORD=tu_contraseña
-DB_NAME=crud_db
+```bash
+cd ../client
+npm install
+```
+
+---
+
+### 3. Configura las variables de entorno
+
+Crea un archivo `.env` en la carpeta `/server` con el siguiente contenido:
+
+```
 PORT=3001
+DB_HOST=localhost
+DB_USER=tu_usuario_mysql
+DB_PASSWORD=tu_contraseña
+DB_NAME=nombre_base_datos
 ```
 
-Ejecuta el servidor:
+---
+
+## ▶️ Ejecución del proyecto
+
+### Backend
+
+Desde la carpeta `/server`:
 
 ```bash
-node index.js
+npm start
 ```
 
-### Configura el Frontend
+El backend correrá en: `http://localhost:3001`
+
+Documentación Swagger: `http://localhost:3001/api-docs`
+
+---
+
+### Frontend
+
+Desde la carpeta `/client`:
 
 ```bash
-cd frontend
-npm install
-npm run dev
+npm start
 ```
 
-Abre tu navegador en [http://localhost:5173](http://localhost:5173)
+El frontend correrá en: `http://localhost:3000`
 
-## ✅ Estado del proyecto
+---
 
-✅ Completado – Listo para usar y extender con autenticación u otras entidades.
+## 📄 Documentación con Swagger
 
-## 📄 Licencia
+La documentación de la API se genera automáticamente con Swagger y está disponible en:
 
-Este proyecto se distribuye bajo la licencia MIT.
+```
+http://localhost:3001/api-docs
+```
+
+Aquí podrás probar los endpoints directamente desde el navegador.
+
+---
+
+## ✅ Requisitos
+
+- Node.js
+- MySQL
+- npm
+
+---
+
